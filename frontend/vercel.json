@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "https://giai-toan-tuh.vercel.app/api/:path*"
+    }
+  ]
+}
