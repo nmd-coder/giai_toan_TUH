@@ -115,7 +115,7 @@ export function SimplexView({ data }: { data: LPSolveResult }) {
         </Section>
       ))}
 
-      {data.iterations.length > 0 && <p className="legend">Trong bảng: vùng tô màu đánh dấu cột vào và dòng ra; ô viền đậm là phần tử trục. Dấu × chỉ cột biến giả đã loại.</p>}
+      {data.iterations.length > 0 && <p className="legend">Trong bảng: vùng tô màu đánh dấu cột vào và dòng ra; ô viền đậm là phần tử trục. Dấu × chỉ cột biến giả đã loại. Vuốt ngang trong bảng để xem các cột bị khuất.</p>}
       <IterationNavigator steps={data.iterations.map((it) => (
         <Section key={it.t} title={`Bước ${it.t}`} aside={<span className="chip">{it.basis.map((b) => `A${b}`).join(', ')}</span>}>
           <Tableau it={it} cols={data.columns} dual={dual} />

@@ -137,7 +137,7 @@ export default function TPResultView({ data }: { data: TPResult }) {
         <div className="math-box"><Lines lines={data.initial.lines} /></div>
       </Section>
 
-      <p className="legend">Trong bảng: cước phí ở góc, lượng phân phối ở giữa; ô viền xanh thuộc cơ sở, ô đỏ vào cơ sở, viền nét đứt ra khỏi cơ sở. Dấu +/− chỉ chu trình điều chỉnh.</p>
+      <p className="legend">Trong bảng: cước phí ở góc, lượng phân phối ở giữa; ô viền xanh thuộc cơ sở, ô đỏ vào cơ sở, viền nét đứt ra khỏi cơ sở. Dấu +/− chỉ chu trình điều chỉnh. Vuốt ngang trong bảng để xem các cột bị khuất.</p>
       <IterationNavigator steps={data.iterations.map((it) => (
         <Section key={it.t} title={`Lặp lần ${it.t}`} aside={<span className="chip">F = {it.cost}</span>}>
           <div className="math-box pot-lines">
