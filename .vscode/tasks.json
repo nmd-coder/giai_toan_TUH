@@ -1,0 +1,40 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Backend: chạy (cổng 8000)",
+      "type": "shell",
+      "command": ".venv/bin/python -m uvicorn app.main:app --reload --port 8000",
+      "windows": { "command": ".venv\\Scripts\\python.exe -m uvicorn app.main:app --reload --port 8000" },
+      "options": { "cwd": "${workspaceFolder}/backend" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "dedicated", "group": "dev" }
+    },
+    {
+      "label": "Frontend: chạy (cổng 5173)",
+      "type": "shell",
+      "command": "npm run dev:ui",
+      "options": { "cwd": "${workspaceFolder}/frontend" },
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "panel": "dedicated", "group": "dev" }
+    },
+    {
+      "label": "Chạy cả backend và frontend",
+      "dependsOn": ["Backend: chạy (cổng 8000)", "Frontend: chạy (cổng 5173)"],
+      "dependsOrder": "parallel",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: chạy kiểm thử",
+      "type": "shell",
+      "command": ".venv/bin/python -m pytest -q",
+      "windows": { "command": ".venv\\Scripts\\python.exe -m pytest -q" },
+      "options": { "cwd": "${workspaceFolder}/backend" },
+      "problemMatcher": [],
+      "group": "test"
+    }
+  ]
+}
