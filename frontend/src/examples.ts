@@ -31,6 +31,11 @@ export const LP_CUSTOM_EXAMPLES: LPExample[] = [
     form: { sense: 'max', c: ['5', '4'], varSigns: ['ge0', 'ge0'],
       rows: rows([[[2, 1], '<=', 10], [[1, 2], '<=', 8], [[1, 0], '<=', 4]]) },
   },
+  {
+    label: 'Ví dụ 6 – Kiểm tra độ lệch bù: x tối ưu', method: 'check', x: ['2', '2'],
+    form: { sense: 'max', c: ['3', '2'], varSigns: ['ge0', 'ge0'],
+      rows: rows([[[1, 1], '<=', 4], [[1, 0], '<=', 2], [[0, 1], '<=', 3]]) },
+  },
 ];
 
 export interface TPExample { label: string; form: TPForm; method: TPMethod }
